@@ -479,7 +479,7 @@ This forms a **Liquid Conglomerate** — a three-level hierarchical meta-learnin
 
 The L0 networks handle the problem. The L1 controller handles the evolutionary process. The L2 controller handles the meta-process. Each level operates on a different time scale, enabled by the LTC/CfC neuron types with their evolvable time constants.
 
-This isn't theoretical — it's what makes neuroevolution practical for real problems. Hand-tuning evolutionary hyperparameters is as tedious and fragile as hand-tuning network architectures. I spent weeks adjusting mutation rates by hand before the meta-controller existed. Then I spent a weekend building the meta-controller. Then I watched it find better hyperparameters than I ever had in about forty minutes. That was a humbling and delightful afternoon. After three decades of tuning things by hand, watching a machine tune things better and faster doesn't sting anymore. It's a relief.
+This isn't theoretical — it's what makes neuroevolution practical for real problems. Hand-tuning evolutionary hyperparameters is as tedious and fragile as hand-tuning network architectures. I spent weeks adjusting mutation rates by hand before the meta-controller existed. Then I spent a weekend building the meta-controller. Then I watched it find better hyperparameters than I ever had in about forty minutes. That was a humbling and delightful afternoon. After three decades of tuning things by hand, watching a machine tune things better and faster doesn't sting anymore. It's a relief. While the rest of the industry was scaling up — more parameters, more GPUs, more data — we were scaling inward, letting the system learn how to learn.
 
 The meta-controller automates both the architecture search AND the search parameters, closing the loop on what would otherwise be an endless cycle of human tweaking.
 
@@ -495,6 +495,6 @@ Let me be explicit about what running TWEANN on the BEAM buys you, because I've 
 
 **Distribution is built in.** An island model with 4 sub-populations on 4 machines is 4 Erlang nodes. Migration is message passing. No distributed computing framework needed. No serialization protocol. Just `{migrate, Agent}` sent to a remote PID.
 
-**The entire stack speaks one language.** Genotypes in ETS. Phenotypes as processes. Evolution as gen_servers. NIFs for the hot path. No Python-to-C++ bridge. No TensorFlow serving layer. No ONNX export. Erlang all the way down, Rust for the math, and the BEAM holding it all together.
+**The entire stack speaks one language.** Genotypes in ETS. Phenotypes as processes. Evolution as gen_servers. NIFs for the hot path. No Python-to-C++ bridge. No TensorFlow serving layer. No ONNX export. Erlang all the way down, Rust for the math, and the BEAM holding it all together. It's a less traveled stack, and that's precisely why it works — nobody had to fight the framework to do what the problem actually required.
 
 The next chapter shifts from evolved intelligence to orchestrated intelligence — how LLMs fit into the same event-sourced architecture, playing specific roles in a pipeline that produces software, not fitness scores.

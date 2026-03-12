@@ -16,7 +16,7 @@ The problem wasn't the AI's output — it was actually decent. The problem was t
 
 Same failure as CASE tools, thirty years later. Opaque generation. Invisible decisions. No steering.
 
-That's when we realized Martha needed to be a command center, not a chat window. You can't watch a machine think. But you can watch it *decide* — if you model its decisions as events, and you build a UI that renders those events in real time.
+That's when we realized Martha needed to be a command center, not a chat window. Every other AI tool was building a better chatbot. We stepped sideways. You can't watch a machine think. But you can watch it *decide* — if you model its decisions as events, and you build a UI that renders those events in real time.
 
 Martha Studio is that window. It's a real-time command center for AI-assisted software development, showing you every decision being made, every gate waiting for approval, every agent currently running. It turns the venture lifecycle (Chapter 13) from an abstract process model into something you can see, steer, and trust.
 
@@ -279,7 +279,7 @@ routes/
 └── craft_division/     ← code generation and testing
 ```
 
-These aren't technical route names. They're business capabilities. A developer looking at this directory tree knows exactly what Martha does: compose visions, storm divisions, plan them, track work on a kanban, and craft code. No `pages/`, no `views/`, no `components/` — the directory structure screams its intent.
+These aren't technical route names. They're business capabilities. A developer looking at this directory tree knows exactly what Martha does: compose visions, storm divisions, plan them, track work on a kanban, and craft code. No `pages/`, no `views/`, no `components/` — the choices were unconventional, deliberately so, and the directory structure screams its intent.
 
 Each route directory contains its Svelte components, its API client functions, and its local state management. No shared `stores/` directory. No centralized `api/` layer. Each capability owns everything it needs.
 

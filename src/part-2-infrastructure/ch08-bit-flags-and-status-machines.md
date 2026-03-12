@@ -8,7 +8,7 @@ I want to tell you about the worst aggregate I ever wrote. It had a `status` fie
 
 Within two months, the status field was a list of atoms: `[paid, partially_shipped, on_hold, under_dispute]`. The pattern matching was a nightmare. Every `execute/2` function started with a paragraph of list membership checks. The serialization was a JSON array of strings. The ETS queries were full table scans because you can't index into a list. The code compiled. The tests passed (barely). And every time someone asked "what are the possible states of an order?" I had to stare at the code for ten minutes before answering.
 
-The solution had been in my muscle memory since the early '90s. I'd just forgotten to use it.
+The solution had been in my muscle memory since the early '90s. I'd just forgotten to use it. While the rest of the industry was reaching forward for newer abstractions, the answer was behind us the whole time.
 
 C programmers have been using bit flags since before most of today's developers were born. I was using them in 1992, writing system utilities on Unix. Every C programmer of that era knew `O_RDONLY | O_CREAT | O_TRUNC` by heart. Unix file permissions are bit flags — `rwxr-xr-x` is just a visual representation of the integer 755, which is `111 101 101` in binary. TCP flags — SYN, ACK, FIN, RST — are bits in a byte. The Win32 API was riddled with them: `WS_OVERLAPPED | WS_CAPTION | WS_SYSMENU` for window styles, `FILE_ATTRIBUTE_HIDDEN | FILE_ATTRIBUTE_READONLY` for file attributes. This was not esoteric knowledge. It was Tuesday.
 
@@ -301,6 +301,6 @@ Bit flags are a small idea with outsized impact. One integer replaces a collecti
 
 In an event-sourced system where status changes with every event, where business rules gate every command, and where aggregate state must be compact enough to snapshot and replay efficiently, bit flags are the natural representation.
 
-They're not glamorous. They're not novel. They're the kind of technique that C programmers used routinely in the '80s and '90s, that Unix internals have relied on since the beginning, that TCP headers have carried since 1981 — applied to a domain where most practitioners reach for heavyweight alternatives because nobody taught them the old ways. The first time you refactor a twenty-line state management function into a single `has_all` check, you'll feel what I felt: relief, followed by mild irritation that the industry forgot this technique in the first place.
+They're not glamorous. They're not novel. They're the kind of technique that C programmers used routinely in the '80s and '90s, that Unix internals have relied on since the beginning, that TCP headers have carried since 1981 — applied to a domain where most practitioners reach for heavyweight alternatives because nobody taught them the old ways. Sometimes the road less taken is the one your predecessors already paved. The first time you refactor a twenty-line state management function into a single `has_all` check, you'll feel what I felt: relief, followed by mild irritation that the industry forgot this technique in the first place.
 
 One integer. All the state you need.

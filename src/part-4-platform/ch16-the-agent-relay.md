@@ -346,7 +346,7 @@ This is the relay pattern:
 9. The next process manager reacts.
 10. Go to step 3.
 
-No orchestrator. No central controller. No workflow engine. Just events, process managers, and agents. The relay emerges from the interaction of independent, event-driven components.
+No orchestrator. No central controller. No workflow engine. Every AI framework in 2025 was building elaborate orchestration layers — LangChain, CrewAI, AutoGen. We went without one. Just events, process managers, and agents. The relay emerges from the interaction of independent, event-driven components.
 
 If that sounds familiar, it should. This is the same architecture we've been building throughout this book. Order processing, capability management, plugin lifecycle — they all work this way. The only difference is that some of the "desks" in this relay are staffed by language models instead of deterministic code. The architecture doesn't care. An event is an event. A command is a command. Whether the handler is a function or a 100-billion-parameter neural network, the process manager dispatches the same way.
 
@@ -364,4 +364,4 @@ Watch the relay run. See each agent hand off to the next. Approve the decisions 
 
 The machines collaborate. You watch. When they need you, they stop and ask.
 
-That's the relay. We tried three other architectures first — a monolith, a batch pipeline, and a tightly-coupled service mesh. Each one recapitulated a failure mode I'd seen before in thirty-five years of building systems. The relay works because it applies the patterns that have always worked: loose coupling, explicit routing, durable messages, and human checkpoints. This is the one that stuck.
+That's the relay. We tried three other architectures first — a monolith, a batch pipeline, and a tightly-coupled service mesh. Each one recapitulated a failure mode I'd seen before in thirty-five years of building systems. The relay works because it applies the patterns that have always worked: loose coupling, explicit routing, durable messages, and human checkpoints. It's not the road most traveled. This is the one that stuck.

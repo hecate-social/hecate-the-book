@@ -18,7 +18,7 @@ The worst thing you can do to a platform is make it monolithic. The second worst
 
 Hecate's plugin architecture — the one we have now, the one that works — avoids both failure modes. Plugins are genuinely isolated: separate OTP applications, separate event stores, separate static assets. They declare a behavior contract, the platform loads them, and the two communicate through well-defined channels. When a plugin misbehaves, it crashes in its own supervision tree. When the platform upgrades, the plugin contract stays stable.
 
-The design philosophy is stolen from old-fashioned office architecture: a plugin is a tenant in a building. The building provides electricity, plumbing, and a mail slot. The tenant furnishes the space however they want. The building manager doesn't need to know what happens inside. (And critically, a fire in one office doesn't burn down the building.)
+There were established frameworks for plugin systems — OSGi-style containers, microkernel architectures with standardized extension points. We studied them and built something smaller. The design philosophy is stolen from old-fashioned office architecture: a plugin is a tenant in a building. The building provides electricity, plumbing, and a mail slot. The tenant furnishes the space however they want. The building manager doesn't need to know what happens inside. (And critically, a fire in one office doesn't burn down the building.)
 
 ---
 
@@ -41,7 +41,7 @@ Every Hecate plugin implements the `hecate_plugin` behaviour. Five required call
 
 That's the entire surface area. Five functions. We agonized over this number. Early versions of the contract had twelve callbacks — `on_startup`, `on_shutdown`, `health_check`, `dependencies`, `migrations`, `permissions`... The contract was comprehensive and nobody wanted to implement it. Every new callback was a reason not to write a plugin.
 
-I've seen this exact mistake in every plugin system I've worked with. Eclipse's extension point schema required XML manifests so verbose that writing the manifest was harder than writing the plugin. COM required implementing `IUnknown` plus whatever interfaces your component needed, and getting the reference counting wrong meant memory leaks or crashes. The lesson, which took the industry decades to learn and which we nearly forgot, is that the contract should be as small as possible. We kept cutting until we hit the minimum viable contract: tell us who you are, what routes you want, where your files are, whether you need a store, and how to start you up. Everything else is your problem.
+I've seen this exact mistake in every plugin system I've worked with. Eclipse's extension point schema required XML manifests so verbose that writing the manifest was harder than writing the plugin. COM required implementing `IUnknown` plus whatever interfaces your component needed, and getting the reference counting wrong meant memory leaks or crashes. The lesson, which took the industry decades to learn and which we nearly forgot, is that the contract should be as small as possible. The conventional wisdom was "comprehensive beats minimal." We went the other direction. We kept cutting until we hit the minimum viable contract: tell us who you are, what routes you want, where your files are, whether you need a store, and how to start you up. Everything else is your problem.
 
 Let's look at each:
 

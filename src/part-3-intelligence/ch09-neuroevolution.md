@@ -16,7 +16,7 @@ Now, I'd been tracking Kenneth Stanley's work for years. When NEAT appeared in 2
 
 That's the lie of omission at the heart of deep learning. Not a malicious lie — more of a collective blind spot. We assume the architecture is given, and training is the hard part. Nobody asks the obvious question: **what if the architecture itself could evolve?**
 
-That question is the foundation of neuroevolution. And it changes everything about how you think about neural networks.
+That question is the foundation of neuroevolution. And it changes everything about how you think about neural networks. The entire industry was optimizing the answer. We went back and questioned the question.
 
 ---
 
@@ -147,7 +147,7 @@ Here's where neuroevolution meets the BEAM virtual machine, and something remark
 
 In a traditional neural network framework (PyTorch, TensorFlow), neurons are matrix elements. The entire network is a sequence of matrix multiplications. This is great for GPU acceleration but terrible for variable topology: every structural change means reallocating matrices, reshaping tensors, rebuilding the computational graph.
 
-Everyone told us to use Python. "Real ML happens in Python," they said. "You're going to rewrite PyTorch in Erlang?" they said. I've been told to use the fashionable language many times over thirty-five years. Use C++, they said in the nineties. Use Java, they said in 2000. Use Ruby, they said in 2008. Use Go, use Rust, use Python. Each time, the advice was well-intentioned. Each time, the question wasn't "which language is popular?" but "which platform's fundamental model matches the problem?" For neuroevolution — where every neuron is an independent computational entity with its own state and lifecycle — the answer has been obvious since I first understood the BEAM's process model.
+Everyone told us to use Python. "Real ML happens in Python," they said. "You're going to rewrite PyTorch in Erlang?" they said. I've been told to use the fashionable language many times over thirty-five years. Use C++, they said in the nineties. Use Java, they said in 2000. Use Ruby, they said in 2008. Use Go, use Rust, use Python. Each time, the advice was well-intentioned. Each time, the question wasn't "which language is popular?" but "which platform's fundamental model matches the problem?" For neuroevolution — where every neuron is an independent computational entity with its own state and lifecycle — the answer has been obvious since I first understood the BEAM's process model. The GPU arms race had a clear winner. We weren't interested in that race.
 
 On the BEAM, each neuron is an Erlang process. Not a metaphorical process — an actual lightweight process with its own mailbox, its own state, its own lifecycle. A network with 50 neurons is 50 processes, communicating via message passing.
 

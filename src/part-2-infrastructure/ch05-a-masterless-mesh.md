@@ -14,7 +14,7 @@ That's when the question hit me: who exactly is supposed to lead here? The lapto
 
 But here's the thing — the masterless concept isn't new to me. USENET was masterless. Every node carried its own copy of every newsgroup, and articles propagated through flooding. Gnutella was masterless. BitTorrent is masterless. I'd seen this topology work at massive scale for decades. What I hadn't seen was someone combine it with modern transport (QUIC), modern conflict resolution (CRDTs), and a serious peer-to-peer discovery protocol on hardware you can buy for the price of a nice dinner.
 
-Macula takes that path. No leaders. No quorum. No consensus protocol for writes. Every node is equal. Every node runs the full stack. Nodes discover each other, exchange data, and converge — eventually, reliably, without anyone being in charge.
+Macula takes the less-traveled fork. No leaders. No quorum. No consensus protocol for writes. Every node is equal. Every node runs the full stack. Nodes discover each other, exchange data, and converge — eventually, reliably, without anyone being in charge.
 
 This chapter is about how that works. (If you've never had to debug a split-brain at 2 AM, I envy you. But read on anyway — the ideas here will change how you think about coordination.)
 
@@ -279,5 +279,7 @@ A masterless mesh changes the assumptions you can make about your system. After 
 The trade-off is complexity. I won't pretend otherwise. Debugging eventual consistency is harder than debugging a leader-follower system. Message ordering is not guaranteed. Network partitions cause temporary divergence. You have to design your application to tolerate all of this. There were days, especially early on, when I missed the simplicity of "just ask the leader." Every distributed systems paper starts with "assume a reliable network." Every distributed systems postmortem starts with "the network was not reliable."
 
 But if your system is a collection of autonomous agents — each with its own event store, its own decision-making capability, its own local state — then a masterless mesh isn't a compromise. It's the only topology that matches the architecture. I've seen this pattern under six different names across four decades — from USENET floods to Gnutella to BitTorrent swarms to CRDTs — and this time we finally have the transport, the math, and the runtime to do it right.
+
+The well-lit road led to Kubernetes, to managed clusters, to someone else's infrastructure. We went the other way — into the woods, where it's darker but quieter, and the topology is ours.
 
 No kings. No servers. Just peers.

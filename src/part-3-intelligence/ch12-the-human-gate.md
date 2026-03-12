@@ -20,7 +20,7 @@ Manufacturing figured this out decades ago. Quality gates on production lines. A
 
 Hecate's agent pipeline works the same way. Agents have genuine autonomy within their roles. The visionary autonomously produces a product vision. The explorer autonomously identifies bounded contexts. The stormer autonomously designs aggregates and events. But between certain roles — at critical decision points where the consequences of being wrong are high — the pipeline stops. A gate opens. A human must look at the output, consider it, and decide: pass or reject.
 
-These gates are the most important feature in the entire system. I don't say that lightly. More important than the LLM orchestration. More important than the event sourcing. More important than the twelve specialized roles. Because without gates, you have a very sophisticated way of producing output you can't trust.
+These gates are the most important feature in the entire system — and the one that runs most directly counter to the industry's obsession with removing humans from every loop. I don't say that lightly. More important than the LLM orchestration. More important than the event sourcing. More important than the twelve specialized roles. Because without gates, you have a very sophisticated way of producing output you can't trust.
 
 ---
 
@@ -337,7 +337,7 @@ This isn't a temporary measure. It's not "we'll remove the gates when the AI get
 
 After thirty-five years, I've learned that the question isn't whether to trust the machine. It's which decisions need human judgment and which ones don't. Every technology generation promises to move that line further toward full autonomy. And every generation does move it — a little. CASE tools automated boilerplate code. Model-driven development automated schema generation. Low-code platforms automated CRUD interfaces. LLMs automate design exploration and code generation. Each wave automated something real. None of them eliminated the need for human judgment at the critical junctures. The line moves, but it never reaches the end.
 
-The gate pattern is our answer to that permanent reality. Not "how do we make AI fully autonomous?" but "how do we make human judgment at critical decision points as informed and efficient as possible?" That's the question that has a good answer. The first question, I suspect, never will.
+The gate pattern is our answer to that permanent reality. Not "how do we make AI fully autonomous?" but "how do we make human judgment at critical decision points as informed and efficient as possible?" While the industry chased full autonomy, we chased trustworthy collaboration. That's the question that has a good answer. The first question, I suspect, never will.
 
 Autonomy isn't the absence of oversight. It's the presence of trust — and trust is built by showing your work, accepting feedback, and recording every decision for posterity.
 

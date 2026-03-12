@@ -167,7 +167,7 @@ maybe_register_user
 maybe_ship_order
 ```
 
-This name tells you: this module contains business rules. It might produce an event, or it might reject the command. The "maybe" is honest in a way that most code isn't. It doesn't promise success. It says: "I'll look at the dossier and decide."
+This name tells you: this module contains business rules. It might produce an event, or it might reject the command. The "maybe" is honest in a way that most code isn't — a small defiance of the convention that every function name should promise certainty. It doesn't promise success. It says: "I'll look at the dossier and decide."
 
 **Process managers** describe their trigger and action:
 
@@ -287,7 +287,7 @@ The hard part of screaming architecture isn't the naming conventions — those a
 
 Every framework, every tutorial, every Stack Overflow answer teaches you to organize by technical concern. Controllers go in `controllers/`. Services go in `services/`. Models go in `models/`. It's the path of least resistance, and it's what your IDE scaffolds for you. Your tools are, with the best of intentions, actively helping you build an unmaintainable codebase. It's like a GPS that always routes you through the scenic overlook — pleasant at first, catastrophic when you're late for a deployment. This has been true since the first MVC frameworks in the nineties. The entire industry has been reinforcing this muscle memory for thirty-plus years.
 
-Breaking out of this pattern requires constant vigilance — not for a week, but for months, until the new pattern becomes the default. After thirty-five years of building software, I can tell you that unlearning a deeply ingrained practice is harder than learning a new one. Every time I created a new file, my fingers wanted to type `handlers/`. The mental muscle memory of decades of layered architecture doesn't go away overnight. It took about three months of conscious effort before the new patterns became automatic. But they did become automatic, and now the old way feels as wrong as it should.
+The industry went one way. We went the other. Breaking out of this pattern requires constant vigilance — not for a week, but for months, until the new pattern becomes the default. After thirty-five years of building software, I can tell you that unlearning a deeply ingrained practice is harder than learning a new one. Every time I created a new file, my fingers wanted to type `handlers/`. The mental muscle memory of decades of layered architecture doesn't go away overnight. It took about three months of conscious effort before the new patterns became automatic. But they did become automatic, and now the old way feels as wrong as it should.
 
 The reward is a codebase that explains itself. One where you can show a product manager the directory listing and they'll recognize their domain. Where six months from now, you won't need to grep through the codebase to find where disputes are handled — the answer will be screaming at you from the folder structure.
 

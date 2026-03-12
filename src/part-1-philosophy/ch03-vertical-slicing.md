@@ -12,7 +12,7 @@ Six months in, nobody could find anything. "Where's the code for payment retry l
 
 Software architecture has a default mode, and it's horizontal. Decades of frameworks, textbooks, and best-practice guides have trained developers to organize code by technical concern. It's so pervasive that most developers have never questioned it. I know I didn't, for the first fifteen years of my career. It was just how things were done — like storing dates as strings was just how things were done, until it wasn't.
 
-This chapter makes the case that horizontal layering is an anti-pattern — one that makes code harder to find, harder to change, and harder to delete. The alternative is vertical slicing: organizing code by business capability, so that everything related to one feature lives together.
+This chapter makes the case that horizontal layering is an anti-pattern — one that makes code harder to find, harder to change, and harder to delete. The alternative is vertical slicing: organizing code by business capability, so that everything related to one feature lives together. There's a well-paved road for the layered approach. We took the dirt track.
 
 ---
 
@@ -88,7 +88,7 @@ Need to add email verification? Your changes are confined to `register_user/`. T
 
 New developer joins? They scan the top-level directory and immediately know: this system registers users, places orders, processes payments, and tracks shipments. No mental map needed. No spreadsheet required.
 
-The first time I reorganized a project this way — after fifteen years of layered architecture — the reaction from the team was disbelief. "Wait, that's it? Everything for registration is just... in there?" Yes. That's it. The relief was palpable. It was the same feeling I'd had in the early 2000s when I first used version control after years of manual file copying — an immediate sense of "why didn't we always do this?"
+The first time I reorganized a project this way — after fifteen years of following the crowd with layered architecture — the reaction from the team was disbelief. "Wait, that's it? Everything for registration is just... in there?" Yes. That's it. The relief was palpable. It was the same feeling I'd had in the early 2000s when I first used version control after years of manual file copying — an immediate sense of "why didn't we always do this?"
 
 ---
 

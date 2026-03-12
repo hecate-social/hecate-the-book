@@ -16,7 +16,7 @@ I've seen this movie before. In the 90s, CASE tools promised to generate code fr
 
 That's when we stopped thinking about AI tooling and started thinking about process. Not "software development process" in the Agile-ceremony sense. Process in the business-operations sense: a series of desks, each with a specific job, each passing a dossier to the next. The same model we'd been building the rest of Hecate around (Chapter 1). After decades of BPM tools, workflow engines, and state machines in enterprise software, I knew one thing: if you model development as a business process, the process itself becomes the documentation. Every decision is a slip in a dossier. Every transition is an event. The history writes itself.
 
-We modeled software development as a business process. The irony of using event sourcing to track the development of an event-sourcing framework was not lost on us. We leaned into it.
+We modeled software development as a business process — not because no alternatives existed, but because the alternatives all modeled the wrong thing. There were task trackers, sprint boards, kanban tools by the dozen. We went somewhere less traveled. The irony of using event sourcing to track the development of an event-sourcing framework was not lost on us. We leaned into it.
 
 The result is 10 processes that take a venture from a one-sentence idea to deployed, tested code. Each process is an event-sourced dossier. Each dossier passes through desks. Each desk adds slips. The slips accumulate into a complete, replayable record of every decision that was made along the way. We didn't arrive at 10 by planning it on a whiteboard. We arrived at 10 by splitting things apart every time a process tried to do two jobs at once.
 
@@ -296,4 +296,4 @@ This is the dossier principle (Chapter 1) applied recursively. The venture is a 
 
 The result is a system that can explain, at any point, exactly how it got where it is. Not through logs. Not through database snapshots. Through a complete, ordered, immutable record of every decision that was ever made.
 
-Ten processes. One venture. Every decision recorded, every phase traceable, every artifact accounted for. We arrived here after decades of watching project management tools capture either too much ceremony or too little history. This captures exactly the decisions that matter, and nothing else. I wouldn't go back.
+Ten processes. One venture. Every decision recorded, every phase traceable, every artifact accounted for. We arrived here after decades of watching project management tools capture either too much ceremony or too little history — and after deciding, deliberately, to stop waiting for the industry to fix the problem and build something ourselves. This captures exactly the decisions that matter, and nothing else. I wouldn't go back.
