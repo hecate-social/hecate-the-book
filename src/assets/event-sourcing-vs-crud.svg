@@ -1,0 +1,103 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#53d8fb"/>
+    </marker>
+    <marker id="arr-r" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e94560"/>
+    </marker>
+    <marker id="arr-g" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f0c674"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="18" font-weight="bold">Event Sourcing vs Traditional CRUD</text>
+
+  <!-- Divider -->
+  <line x1="400" y1="45" x2="400" y2="480" stroke="#0f3460" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="400" y="495" text-anchor="middle" fill="#0f3460" font-family="monospace" font-size="10">vs</text>
+
+  <!-- === LEFT SIDE: CRUD === -->
+  <text x="200" y="60" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="15" font-weight="bold">Traditional (CRUD)</text>
+
+  <!-- Step 1: Order placed -->
+  <rect x="40" y="85" width="310" height="55" rx="4" fill="#16213e" stroke="#0f3460" stroke-width="1"/>
+  <text x="55" y="103" fill="#f0c674" font-family="monospace" font-size="11">Step 1: INSERT order</text>
+  <rect x="55" y="112" width="280" height="22" rx="2" fill="#0f3460" stroke="#e94560" stroke-width="1"/>
+  <text x="65" y="127" fill="#e94560" font-family="monospace" font-size="10">#42 | placed  | $99 | pending</text>
+
+  <!-- Step 2: Payment received -->
+  <rect x="40" y="155" width="310" height="55" rx="4" fill="#16213e" stroke="#0f3460" stroke-width="1"/>
+  <text x="55" y="173" fill="#f0c674" font-family="monospace" font-size="11">Step 2: UPDATE order SET status=paid</text>
+  <rect x="55" y="182" width="280" height="22" rx="2" fill="#0f3460" stroke="#e94560" stroke-width="1"/>
+  <text x="65" y="197" fill="#e94560" font-family="monospace" font-size="10">#42 | paid    | $99 | confirmed</text>
+  <!-- strikethrough on old -->
+  <text x="55" y="173" fill="#e94560" font-family="monospace" font-size="9" opacity="0.4">           (overwrites row)</text>
+
+  <!-- Step 3: Shipped -->
+  <rect x="40" y="225" width="310" height="55" rx="4" fill="#16213e" stroke="#0f3460" stroke-width="1"/>
+  <text x="55" y="243" fill="#f0c674" font-family="monospace" font-size="11">Step 3: UPDATE order SET status=shipped</text>
+  <rect x="55" y="252" width="280" height="22" rx="2" fill="#0f3460" stroke="#e94560" stroke-width="1"/>
+  <text x="65" y="267" fill="#e94560" font-family="monospace" font-size="10">#42 | shipped | $99 | dispatched</text>
+
+  <!-- Arrows between steps -->
+  <line x1="195" y1="140" x2="195" y2="153" stroke="#e94560" stroke-width="1.5" marker-end="url(#arr-r)"/>
+  <line x1="195" y1="210" x2="195" y2="223" stroke="#e94560" stroke-width="1.5" marker-end="url(#arr-r)"/>
+
+  <!-- Result box -->
+  <rect x="40" y="300" width="310" height="80" rx="6" fill="#e94560" fill-opacity="0.1" stroke="#e94560" stroke-width="2"/>
+  <text x="195" y="322" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="12" font-weight="bold">Database State</text>
+  <rect x="55" y="332" width="280" height="22" rx="2" fill="#0f3460" stroke="#e94560" stroke-width="1.5"/>
+  <text x="65" y="347" fill="#e94560" font-family="monospace" font-size="10">#42 | shipped | $99 | dispatched</text>
+  <text x="195" y="372" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="10">Only final state. History LOST.</text>
+
+  <!-- X marks for lost history -->
+  <text x="60" y="420" fill="#e94560" font-family="monospace" font-size="12">x When was it placed?</text>
+  <text x="60" y="438" fill="#e94560" font-family="monospace" font-size="12">x Who paid? When?</text>
+  <text x="60" y="456" fill="#e94560" font-family="monospace" font-size="12">x What changed?</text>
+  <text x="60" y="474" fill="#e94560" font-family="monospace" font-size="12">x Can we audit?</text>
+
+  <!-- === RIGHT SIDE: Event Sourcing === -->
+  <text x="600" y="60" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="15" font-weight="bold">Event Sourcing</text>
+
+  <!-- Event 1 -->
+  <rect x="430" y="85" width="340" height="45" rx="4" fill="#16213e" stroke="#53d8fb" stroke-width="1.5"/>
+  <text x="445" y="103" fill="#f0c674" font-family="monospace" font-size="11">Event 1:</text>
+  <text x="445" y="121" fill="#53d8fb" font-family="monospace" font-size="11">order_placed_v1 {id:42, amount:$99}</text>
+
+  <!-- Event 2 -->
+  <rect x="430" y="145" width="340" height="45" rx="4" fill="#16213e" stroke="#53d8fb" stroke-width="1.5"/>
+  <text x="445" y="163" fill="#f0c674" font-family="monospace" font-size="11">Event 2:</text>
+  <text x="445" y="181" fill="#53d8fb" font-family="monospace" font-size="11">payment_received_v1 {by:"alice"}</text>
+
+  <!-- Event 3 -->
+  <rect x="430" y="205" width="340" height="45" rx="4" fill="#16213e" stroke="#53d8fb" stroke-width="1.5"/>
+  <text x="445" y="223" fill="#f0c674" font-family="monospace" font-size="11">Event 3:</text>
+  <text x="445" y="241" fill="#53d8fb" font-family="monospace" font-size="11">order_shipped_v1 {tracking:"TRK99"}</text>
+
+  <!-- Arrows -->
+  <line x1="600" y1="130" x2="600" y2="143" stroke="#53d8fb" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="600" y1="190" x2="600" y2="203" stroke="#53d8fb" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Append-only label -->
+  <text x="420" y="270" fill="#888" font-family="monospace" font-size="10">append-only (immutable)</text>
+
+  <!-- Result box -->
+  <rect x="430" y="300" width="340" height="80" rx="6" fill="#53d8fb" fill-opacity="0.1" stroke="#53d8fb" stroke-width="2"/>
+  <text x="600" y="322" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="12" font-weight="bold">Current State (from replay)</text>
+  <rect x="445" y="332" width="310" height="22" rx="2" fill="#0f3460" stroke="#53d8fb" stroke-width="1.5"/>
+  <text x="455" y="347" fill="#53d8fb" font-family="monospace" font-size="10">#42 | shipped | $99 | TRK99 | alice</text>
+  <text x="600" y="372" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="10">Derived by folding all events.</text>
+
+  <!-- Check marks for preserved history -->
+  <text x="445" y="420" fill="#53d8fb" font-family="monospace" font-size="12">+ Full timeline preserved</text>
+  <text x="445" y="438" fill="#53d8fb" font-family="monospace" font-size="12">+ Complete audit trail</text>
+  <text x="445" y="456" fill="#53d8fb" font-family="monospace" font-size="12">+ Replay to any point</text>
+  <text x="445" y="474" fill="#53d8fb" font-family="monospace" font-size="12">+ Debug by time travel</text>
+
+  <!-- Footer -->
+  <text x="400" y="495" text-anchor="middle" fill="#555" font-family="monospace" font-size="10">The Autonomous Stack — Why Event Sourcing?</text>
+</svg>

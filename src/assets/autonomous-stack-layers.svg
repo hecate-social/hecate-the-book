@@ -1,0 +1,161 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <marker id="la" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#53d8fb"/>
+    </marker>
+    <linearGradient id="g5" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e94560" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#e94560" stop-opacity="0.08"/>
+    </linearGradient>
+    <linearGradient id="g4" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f0c674" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#f0c674" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#53d8fb" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#53d8fb" stop-opacity="0.06"/>
+    </linearGradient>
+    <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#f0c674" stop-opacity="0.15"/>
+      <stop offset="100%" stop-color="#f0c674" stop-opacity="0.04"/>
+    </linearGradient>
+    <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#0f3460" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0f3460" stop-opacity="0.15"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="500" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="18" font-weight="bold">The Autonomous Stack</text>
+  <text x="400" y="48" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">Five layers from transport to platform</text>
+
+  <!-- === LAYER 5: PLATFORM === -->
+  <rect x="60" y="65" width="530" height="72" rx="6" fill="url(#g5)" stroke="#e94560" stroke-width="2"/>
+  <text x="80" y="86" fill="#e94560" font-family="monospace" font-size="14" font-weight="bold">Layer 5: Platform</text>
+
+  <rect x="80" y="95" width="130" height="28" rx="3" fill="#0f3460" stroke="#e94560" stroke-width="1"/>
+  <text x="145" y="113" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="9">Hecate Daemon</text>
+
+  <rect x="220" y="95" width="100" height="28" rx="3" fill="#0f3460" stroke="#e94560" stroke-width="1"/>
+  <text x="270" y="113" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="9">Hecate Web</text>
+
+  <rect x="330" y="95" width="90" height="28" rx="3" fill="#0f3460" stroke="#e94560" stroke-width="1"/>
+  <text x="375" y="113" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="9">Plugins</text>
+
+  <rect x="430" y="95" width="145" height="28" rx="3" fill="#0f3460" stroke="#e94560" stroke-width="1"/>
+  <text x="502" y="113" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="9">App Store</text>
+
+  <!-- Right-side label -->
+  <rect x="610" y="75" width="175" height="52" rx="4" fill="#16213e" stroke="#e94560" stroke-width="1" stroke-dasharray="3"/>
+  <text x="697" y="94" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="9">User-facing application</text>
+  <text x="697" y="108" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="9">Plugin ecosystem</text>
+  <text x="697" y="122" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="9">Hot-reload, Tauri UI</text>
+
+  <!-- Arrow 5→4 -->
+  <line x1="325" y1="137" x2="325" y2="150" stroke="#888" stroke-width="1.5" marker-end="url(#la)"/>
+
+  <!-- === LAYER 4: INTELLIGENCE === -->
+  <rect x="60" y="153" width="530" height="72" rx="6" fill="url(#g4)" stroke="#f0c674" stroke-width="2"/>
+  <text x="80" y="174" fill="#f0c674" font-family="monospace" font-size="14" font-weight="bold">Layer 4: Intelligence</text>
+
+  <rect x="80" y="183" width="100" height="28" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="130" y="201" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">TWEANN</text>
+
+  <rect x="190" y="183" width="150" height="28" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="265" y="201" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">LLM Orchestration</text>
+
+  <rect x="350" y="183" width="120" height="28" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="410" y="201" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">Human Gates</text>
+
+  <rect x="480" y="183" width="95" height="28" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="527" y="201" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">Agents</text>
+
+  <!-- Right-side label -->
+  <rect x="610" y="163" width="175" height="52" rx="4" fill="#16213e" stroke="#f0c674" stroke-width="1" stroke-dasharray="3"/>
+  <text x="697" y="182" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">Neuroevolution</text>
+  <text x="697" y="196" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">AI reasoning + safety</text>
+  <text x="697" y="210" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">Human-in-the-loop</text>
+
+  <!-- Arrow 4→3 -->
+  <line x1="325" y1="225" x2="325" y2="238" stroke="#888" stroke-width="1.5" marker-end="url(#la)"/>
+
+  <!-- === LAYER 3: FRAMEWORK === -->
+  <rect x="60" y="241" width="530" height="72" rx="6" fill="url(#g3)" stroke="#53d8fb" stroke-width="2"/>
+  <text x="80" y="262" fill="#53d8fb" font-family="monospace" font-size="14" font-weight="bold">Layer 3: Framework</text>
+
+  <rect x="80" y="271" width="110" height="28" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="135" y="289" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">Aggregates</text>
+
+  <rect x="200" y="271" width="110" height="28" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="255" y="289" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">Projections</text>
+
+  <rect x="320" y="271" width="140" height="28" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="390" y="289" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">Process Managers</text>
+
+  <rect x="470" y="271" width="105" height="28" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="522" y="289" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">Middleware</text>
+
+  <!-- Right-side label -->
+  <rect x="610" y="251" width="175" height="52" rx="4" fill="#16213e" stroke="#53d8fb" stroke-width="1" stroke-dasharray="3"/>
+  <text x="697" y="270" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">Evoq CQRS/ES</text>
+  <text x="697" y="284" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">Business logic layer</text>
+  <text x="697" y="298" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">Event-driven commands</text>
+
+  <!-- Arrow 3→2 -->
+  <line x1="325" y1="313" x2="325" y2="326" stroke="#888" stroke-width="1.5" marker-end="url(#la)"/>
+
+  <!-- === LAYER 2: STORAGE === -->
+  <rect x="60" y="329" width="530" height="72" rx="6" fill="url(#g2)" stroke="#f0c674" stroke-width="1.5"/>
+  <text x="80" y="350" fill="#f0c674" font-family="monospace" font-size="14" font-weight="bold">Layer 2: Storage</text>
+
+  <rect x="80" y="359" width="130" height="28" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="145" y="377" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">Raft Consensus</text>
+
+  <rect x="220" y="359" width="120" height="28" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="280" y="377" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">Event Streams</text>
+
+  <rect x="350" y="359" width="130" height="28" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="415" y="377" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">Subscriptions</text>
+
+  <rect x="490" y="359" width="85" height="28" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="532" y="377" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">Snapshots</text>
+
+  <!-- Right-side label -->
+  <rect x="610" y="339" width="175" height="52" rx="4" fill="#16213e" stroke="#f0c674" stroke-width="1" stroke-dasharray="3"/>
+  <text x="697" y="358" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">ReckonDB</text>
+  <text x="697" y="372" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">Khepri + Ra (Raft)</text>
+  <text x="697" y="386" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">Append-only event log</text>
+
+  <!-- Arrow 2→1 -->
+  <line x1="325" y1="401" x2="325" y2="414" stroke="#888" stroke-width="1.5" marker-end="url(#la)"/>
+
+  <!-- === LAYER 1: TRANSPORT === -->
+  <rect x="60" y="417" width="530" height="65" rx="6" fill="url(#g1)" stroke="#0f3460" stroke-width="2"/>
+  <text x="80" y="438" fill="#53d8fb" font-family="monospace" font-size="14" font-weight="bold">Layer 1: Transport</text>
+
+  <rect x="80" y="447" width="110" height="25" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="135" y="464" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">QUIC (MsQuic)</text>
+
+  <rect x="200" y="447" width="120" height="25" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="260" y="464" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">Kademlia DHT</text>
+
+  <rect x="330" y="447" width="80" height="25" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="370" y="464" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">CRDTs</text>
+
+  <rect x="420" y="447" width="80" height="25" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="460" y="464" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">Pub/Sub</text>
+
+  <rect x="510" y="447" width="65" height="25" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="542" y="464" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">NAT</text>
+
+  <!-- Right-side label -->
+  <rect x="610" y="422" width="175" height="52" rx="4" fill="#16213e" stroke="#0f3460" stroke-width="1" stroke-dasharray="3"/>
+  <text x="697" y="441" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">Macula Mesh</text>
+  <text x="697" y="455" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">P2P networking</text>
+  <text x="697" y="469" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">No central server</text>
+
+  <!-- Footer -->
+  <text x="400" y="495" text-anchor="middle" fill="#555" font-family="monospace" font-size="10">The Autonomous Stack — Full Architecture Overview</text>
+</svg>

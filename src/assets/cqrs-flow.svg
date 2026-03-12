@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#53d8fb"/>
+    </marker>
+    <marker id="arrow-gold" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f0c674"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e94560"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="18" font-weight="bold">CQRS / Event Sourcing Flow</text>
+
+  <!-- Write Side background -->
+  <rect x="15" y="45" width="770" height="230" rx="6" fill="#16213e" stroke="#0f3460" stroke-width="1.5"/>
+  <text x="30" y="65" fill="#e94560" font-family="monospace" font-size="13" font-weight="bold">WRITE SIDE</text>
+
+  <!-- Write side boxes -->
+  <rect x="30" y="80" width="90" height="40" rx="4" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="75" y="104" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="11">HTTP Req</text>
+
+  <rect x="145" y="80" width="100" height="40" rx="4" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="195" y="104" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="11">API Handler</text>
+
+  <rect x="270" y="80" width="85" height="40" rx="4" fill="#0f3460" stroke="#f0c674" stroke-width="1.5"/>
+  <text x="312" y="104" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="11">Command</text>
+
+  <rect x="380" y="80" width="110" height="40" rx="4" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="435" y="98" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="10">Middleware</text>
+  <text x="435" y="112" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="10">Pipeline</text>
+
+  <rect x="515" y="80" width="110" height="40" rx="4" fill="#0f3460" stroke="#e94560" stroke-width="1.5"/>
+  <text x="570" y="98" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="10">Aggregate</text>
+  <text x="570" y="112" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="10">execute/2</text>
+
+  <rect x="650" y="80" width="80" height="40" rx="4" fill="#0f3460" stroke="#53d8fb" stroke-width="1.5"/>
+  <text x="690" y="104" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="11">Events</text>
+
+  <!-- Arrows write flow -->
+  <line x1="120" y1="100" x2="143" y2="100" stroke="#53d8fb" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="245" y1="100" x2="268" y2="100" stroke="#53d8fb" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="355" y1="100" x2="378" y2="100" stroke="#53d8fb" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="490" y1="100" x2="513" y2="100" stroke="#53d8fb" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="625" y1="100" x2="648" y2="100" stroke="#53d8fb" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Event Store -->
+  <rect x="610" y="155" width="160" height="45" rx="4" fill="#e94560" fill-opacity="0.15" stroke="#e94560" stroke-width="2"/>
+  <text x="690" y="175" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="13" font-weight="bold">Event Store</text>
+  <text x="690" y="192" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="10">(append-only)</text>
+
+  <!-- Arrow from Events to Event Store -->
+  <line x1="690" y1="120" x2="690" y2="153" stroke="#e94560" stroke-width="1.5" marker-end="url(#arrow-red)"/>
+
+  <!-- Fan-out from Event Store -->
+  <!-- Event Handlers -->
+  <rect x="30" y="165" width="155" height="45" rx="4" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="107" y="183" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="11">Event Handlers</text>
+  <text x="107" y="200" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">(side effects)</text>
+
+  <!-- Projections -->
+  <rect x="210" y="165" width="155" height="45" rx="4" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="287" y="183" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="11">Projections</text>
+  <text x="287" y="200" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">(build read models)</text>
+
+  <!-- Process Managers -->
+  <rect x="390" y="165" width="190" height="45" rx="4" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="485" y="183" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="11">Process Managers</text>
+  <text x="485" y="200" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">(dispatch new commands)</text>
+
+  <!-- Arrows from Event Store to fan-out -->
+  <line x1="610" y1="177" x2="582" y2="177" stroke="#f0c674" stroke-width="1" marker-end="url(#arrow-gold)"/>
+  <line x1="610" y1="185" x2="500" y2="185" stroke="#f0c674" stroke-width="1" stroke-dasharray="4"/>
+  <polyline points="610,177 560,177 560,187 367,187" fill="none" stroke="#f0c674" stroke-width="1" marker-end="url(#arrow-gold)"/>
+  <polyline points="610,177 560,177 560,187 187,187" fill="none" stroke="#f0c674" stroke-width="1" marker-end="url(#arrow-gold)"/>
+
+  <!-- PM feedback arrow -->
+  <polyline points="485,210 485,240 312,240 312,118 270,118 270,100" fill="none" stroke="#e94560" stroke-width="1" stroke-dasharray="4" marker-end="url(#arrow-red)"/>
+  <text x="370" y="253" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="9">new command</text>
+
+  <!-- Read Side background -->
+  <rect x="15" y="290" width="770" height="115" rx="6" fill="#16213e" stroke="#0f3460" stroke-width="1.5"/>
+  <text x="30" y="310" fill="#53d8fb" font-family="monospace" font-size="13" font-weight="bold">READ SIDE</text>
+
+  <!-- Query flow -->
+  <rect x="30" y="325" width="90" height="40" rx="4" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="75" y="349" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="11">Query</text>
+
+  <rect x="170" y="325" width="140" height="40" rx="4" fill="#0f3460" stroke="#53d8fb" stroke-width="1.5"/>
+  <text x="240" y="343" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="11">Read Model</text>
+  <text x="240" y="358" text-anchor="middle" fill="#888" font-family="monospace" font-size="10">(ETS / SQLite)</text>
+
+  <rect x="360" y="325" width="100" height="40" rx="4" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="410" y="349" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="11">Response</text>
+
+  <line x1="120" y1="345" x2="168" y2="345" stroke="#53d8fb" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <line x1="310" y1="345" x2="358" y2="345" stroke="#53d8fb" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+  <!-- Arrow from Projections down to Read Model -->
+  <polyline points="287,210 287,285 240,285 240,323" fill="none" stroke="#f0c674" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-gold)"/>
+  <text x="275" y="260" fill="#f0c674" font-family="monospace" font-size="9" transform="rotate(-90 275,260)">populates</text>
+
+  <!-- Legend -->
+  <rect x="500" y="320" width="270" height="75" rx="4" fill="#1a1a2e" stroke="#0f3460" stroke-width="1"/>
+  <text x="515" y="338" fill="#888" font-family="monospace" font-size="10">── synchronous flow</text>
+  <line x1="515" y1="350" x2="555" y2="350" stroke="#f0c674" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="562" y="355" fill="#888" font-family="monospace" font-size="10">async / event-driven</text>
+  <line x1="515" y1="368" x2="555" y2="368" stroke="#e94560" stroke-width="1" stroke-dasharray="4"/>
+  <text x="562" y="373" fill="#888" font-family="monospace" font-size="10">feedback (new cmd)</text>
+
+  <!-- Footer -->
+  <text x="400" y="485" text-anchor="middle" fill="#555" font-family="monospace" font-size="10">The Autonomous Stack — CQRS/ES Architecture</text>
+</svg>

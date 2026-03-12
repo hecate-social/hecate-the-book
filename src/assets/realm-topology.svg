@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <defs>
+    <style>
+      text { font-family: 'Consolas', 'Monaco', 'Courier New', monospace; }
+    </style>
+    <marker id="arrow" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#53d8fb" />
+    </marker>
+    <marker id="arrow-gold" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6" fill="#f0c674" />
+    </marker>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="600" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#e94560" font-size="18" font-weight="bold">Realm Topology: Star-Ring Hybrid</text>
+  <text x="450" y="55" text-anchor="middle" fill="#8888aa" font-size="12">Nodes form rings within realms — realms connect through bridge nodes in a star</text>
+
+  <!-- ═══════════════ REALM 1: hecate (left) ═══════════════ -->
+  <!-- Realm circle -->
+  <circle cx="220" cy="300" r="160" fill="none" stroke="#0f3460" stroke-width="2" stroke-dasharray="8,4" opacity="0.6"/>
+  <text x="220" y="145" text-anchor="middle" fill="#53d8fb" font-size="14" font-weight="bold">realm: hecate</text>
+  <text x="220" y="162" text-anchor="middle" fill="#8888aa" font-size="11">production agents</text>
+
+  <!-- Ring connections (inner ring) -->
+  <path d="M 220,195 A 95,95 0 0,1 310,265" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+  <path d="M 310,265 A 95,95 0 0,1 300,370" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+  <path d="M 300,370 A 95,95 0 0,1 180,390" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+  <path d="M 180,390 A 95,95 0 0,1 130,280" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+  <path d="M 130,280 A 95,95 0 0,1 220,195" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+
+  <!-- Gossip arrows on ring -->
+  <line x1="230" y1="200" x2="290" y2="245" stroke="#53d8fb" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow)" opacity="0.5"/>
+  <line x1="300" y1="355" x2="200" y2="385" stroke="#53d8fb" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow)" opacity="0.5"/>
+  <line x1="145" y1="290" x2="195" y2="210" stroke="#53d8fb" stroke-width="1" stroke-dasharray="3,3" marker-end="url(#arrow)" opacity="0.5"/>
+
+  <!-- Nodes in hecate realm -->
+  <!-- Node 1: beam00 (top) -->
+  <circle cx="220" cy="190" r="22" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="220" y="194" text-anchor="middle" fill="#53d8fb" font-size="9" font-weight="bold">beam00</text>
+
+  <!-- Node 2: beam01 (right) -->
+  <circle cx="315" cy="265" r="22" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="315" y="269" text-anchor="middle" fill="#53d8fb" font-size="9" font-weight="bold">beam01</text>
+
+  <!-- Node 3: beam02 (bottom-right) -->
+  <circle cx="300" cy="375" r="22" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="300" y="379" text-anchor="middle" fill="#53d8fb" font-size="9" font-weight="bold">beam02</text>
+
+  <!-- Node 4: beam03 (bottom-left) -->
+  <circle cx="175" cy="395" r="22" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="175" y="399" text-anchor="middle" fill="#53d8fb" font-size="9" font-weight="bold">beam03</text>
+
+  <!-- Node 5: laptop (left) -->
+  <circle cx="125" cy="275" r="22" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="125" y="279" text-anchor="middle" fill="#53d8fb" font-size="9" font-weight="bold">laptop</text>
+
+  <!-- Bridge node highlight (beam00) -->
+  <circle cx="220" cy="190" r="26" fill="none" stroke="#f0c674" stroke-width="2" stroke-dasharray="4,2" filter="url(#glow)"/>
+
+  <!-- ═══════════════ REALM 2: hecate-dev (right) ═══════════════ -->
+  <!-- Realm circle -->
+  <circle cx="680" cy="230" r="120" fill="none" stroke="#0f3460" stroke-width="2" stroke-dasharray="8,4" opacity="0.6"/>
+  <text x="680" y="115" text-anchor="middle" fill="#e94560" font-size="14" font-weight="bold">realm: hecate-dev</text>
+  <text x="680" y="132" text-anchor="middle" fill="#8888aa" font-size="11">development / staging</text>
+
+  <!-- Ring connections -->
+  <path d="M 680,160 A 65,65 0 0,1 745,230" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+  <path d="M 745,230 A 65,65 0 0,1 680,300" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+  <path d="M 680,300 A 65,65 0 0,1 615,230" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+  <path d="M 615,230 A 65,65 0 0,1 680,160" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+
+  <!-- Nodes in dev realm -->
+  <circle cx="680" cy="160" r="20" fill="#16213e" stroke="#e94560" stroke-width="2"/>
+  <text x="680" y="164" text-anchor="middle" fill="#e94560" font-size="9" font-weight="bold">dev-01</text>
+
+  <circle cx="745" cy="230" r="20" fill="#16213e" stroke="#e94560" stroke-width="2"/>
+  <text x="745" y="234" text-anchor="middle" fill="#e94560" font-size="9" font-weight="bold">dev-02</text>
+
+  <circle cx="680" cy="300" r="20" fill="#16213e" stroke="#e94560" stroke-width="2"/>
+  <text x="680" y="304" text-anchor="middle" fill="#e94560" font-size="9" font-weight="bold">dev-03</text>
+
+  <!-- Bridge node highlight (dev-01) -->
+  <circle cx="680" cy="160" r="24" fill="none" stroke="#f0c674" stroke-width="2" stroke-dasharray="4,2" filter="url(#glow)"/>
+
+  <!-- ═══════════════ REALM 3: marketplace (bottom-right) ═══════════════ -->
+  <circle cx="700" cy="460" r="100" fill="none" stroke="#0f3460" stroke-width="2" stroke-dasharray="8,4" opacity="0.6"/>
+  <text x="700" y="370" text-anchor="middle" fill="#f0c674" font-size="14" font-weight="bold">realm: marketplace</text>
+  <text x="700" y="387" text-anchor="middle" fill="#8888aa" font-size="11">plugin distribution</text>
+
+  <!-- Nodes in marketplace realm -->
+  <circle cx="660" cy="430" r="20" fill="#16213e" stroke="#f0c674" stroke-width="2"/>
+  <text x="660" y="434" text-anchor="middle" fill="#f0c674" font-size="9" font-weight="bold">store</text>
+
+  <circle cx="740" cy="430" r="20" fill="#16213e" stroke="#f0c674" stroke-width="2"/>
+  <text x="740" y="434" text-anchor="middle" fill="#f0c674" font-size="9" font-weight="bold">mirror</text>
+
+  <circle cx="700" cy="500" r="20" fill="#16213e" stroke="#f0c674" stroke-width="2"/>
+  <text x="700" y="504" text-anchor="middle" fill="#f0c674" font-size="9" font-weight="bold">cdn</text>
+
+  <!-- Ring connections -->
+  <path d="M 660,430 A 50,50 0 0,1 740,430" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+  <path d="M 740,430 A 50,50 0 0,1 700,500" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+  <path d="M 700,500 A 50,50 0 0,1 660,430" fill="none" stroke="#0f3460" stroke-width="1.5"/>
+
+  <!-- Bridge node highlight (store) -->
+  <circle cx="660" cy="430" r="24" fill="none" stroke="#f0c674" stroke-width="2" stroke-dasharray="4,2" filter="url(#glow)"/>
+
+  <!-- ═══════════════ INTER-REALM BRIDGE CONNECTIONS (Star) ═══════════════ -->
+  <!-- hecate beam00 → dev-01 -->
+  <line x1="242" y1="182" x2="660" y2="165" stroke="#f0c674" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-gold)" opacity="0.7"/>
+
+  <!-- hecate beam00 → marketplace store -->
+  <line x1="235" y1="208" x2="642" y2="420" stroke="#f0c674" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-gold)" opacity="0.7"/>
+
+  <!-- dev-01 → marketplace store -->
+  <line x1="672" y1="178" x2="662" y2="408" stroke="#f0c674" stroke-width="2" stroke-dasharray="6,4" marker-end="url(#arrow-gold)" opacity="0.7"/>
+
+  <!-- ═══════════════ LEGEND ═══════════════ -->
+  <rect x="20" y="510" width="380" height="75" rx="6" fill="#16213e" stroke="#0f3460" stroke-width="1"/>
+
+  <!-- Legend items -->
+  <circle cx="40" cy="530" r="6" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="55" y="534" fill="#aaaacc" font-size="11">Node (within realm ring)</text>
+
+  <circle cx="40" cy="555" r="6" fill="none" stroke="#f0c674" stroke-width="2" stroke-dasharray="3,1"/>
+  <text x="55" y="559" fill="#aaaacc" font-size="11">Bridge node (connects realms)</text>
+
+  <line x1="220" y1="530" x2="260" y2="530" stroke="#0f3460" stroke-width="2"/>
+  <text x="268" y="534" fill="#aaaacc" font-size="11">Intra-realm gossip ring</text>
+
+  <line x1="220" y1="555" x2="260" y2="555" stroke="#f0c674" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="268" y="559" fill="#aaaacc" font-size="11">Inter-realm bridge (star)</text>
+
+  <!-- Annotation -->
+  <text x="450" y="580" text-anchor="middle" fill="#666688" font-size="11">Nodes gossip within realm rings. Bridge nodes form a star connecting realms.</text>
+</svg>

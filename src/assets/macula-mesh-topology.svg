@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <marker id="ma" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#53d8fb"/>
+    </marker>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+
+  <rect width="800" height="500" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="400" y="30" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="18" font-weight="bold">Macula Mesh — P2P Topology</text>
+
+  <!-- "No Central Server" badge -->
+  <rect x="280" y="42" width="240" height="24" rx="12" fill="#e94560" fill-opacity="0.15" stroke="#e94560" stroke-width="1.5"/>
+  <text x="400" y="59" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="12" font-weight="bold">NO CENTRAL SERVER</text>
+
+  <!-- QUIC connection lines (drawn first, behind nodes) -->
+  <!-- Node positions: A(150,180) B(350,120) C(580,150) D(100,340) E(330,300) F(560,330) G(700,240) -->
+
+  <!-- Connections showing DHT routing (not all-to-all) -->
+  <line x1="150" y1="180" x2="350" y2="120" stroke="#0f3460" stroke-width="1.5" opacity="0.7"/>
+  <line x1="350" y1="120" x2="580" y2="150" stroke="#0f3460" stroke-width="1.5" opacity="0.7"/>
+  <line x1="150" y1="180" x2="100" y2="340" stroke="#0f3460" stroke-width="1.5" opacity="0.7"/>
+  <line x1="100" y1="340" x2="330" y2="300" stroke="#0f3460" stroke-width="1.5" opacity="0.7"/>
+  <line x1="330" y1="300" x2="560" y2="330" stroke="#0f3460" stroke-width="1.5" opacity="0.7"/>
+  <line x1="560" y1="330" x2="700" y2="240" stroke="#0f3460" stroke-width="1.5" opacity="0.7"/>
+  <line x1="580" y1="150" x2="700" y2="240" stroke="#0f3460" stroke-width="1.5" opacity="0.7"/>
+  <line x1="350" y1="120" x2="330" y2="300" stroke="#0f3460" stroke-width="1.5" opacity="0.7"/>
+  <line x1="150" y1="180" x2="330" y2="300" stroke="#0f3460" stroke-width="1.5" opacity="0.7"/>
+  <line x1="580" y1="150" x2="560" y2="330" stroke="#0f3460" stroke-width="1.5" opacity="0.7"/>
+
+  <!-- QUIC labels on some connections -->
+  <text x="240" y="142" fill="#0f3460" font-family="monospace" font-size="8" transform="rotate(-15 240,142)">QUIC</text>
+  <text x="460" y="128" fill="#0f3460" font-family="monospace" font-size="8" transform="rotate(8 460,128)">QUIC</text>
+  <text x="640" y="190" fill="#0f3460" font-family="monospace" font-size="8" transform="rotate(40 640,190)">QUIC</text>
+
+  <!-- Node A -->
+  <circle cx="150" cy="180" r="22" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="150" y="184" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="10" font-weight="bold">A</text>
+
+  <!-- Node B -->
+  <circle cx="350" cy="120" r="22" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="350" y="124" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="10" font-weight="bold">B</text>
+
+  <!-- Node C (highlighted - showing internals) -->
+  <circle cx="580" cy="150" r="28" fill="#16213e" stroke="#f0c674" stroke-width="2.5" filter="url(#glow)"/>
+  <text x="580" y="145" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="10" font-weight="bold">C</text>
+  <text x="580" y="158" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="7">peer</text>
+
+  <!-- Node C internals callout -->
+  <rect x="550" y="80" width="230" height="18" rx="3" fill="#f0c674" fill-opacity="0.1"/>
+  <line x1="580" y1="122" x2="580" y2="98" stroke="#f0c674" stroke-width="1" stroke-dasharray="3"/>
+  <text x="665" y="93" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">Gateway + DHT + Gossip + PubSub</text>
+
+  <!-- Node D -->
+  <circle cx="100" cy="340" r="22" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="100" y="344" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="10" font-weight="bold">D</text>
+
+  <!-- Node E -->
+  <circle cx="330" cy="300" r="22" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="330" y="304" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="10" font-weight="bold">E</text>
+
+  <!-- Node F -->
+  <circle cx="560" cy="330" r="22" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="560" y="334" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="10" font-weight="bold">F</text>
+
+  <!-- Node G -->
+  <circle cx="700" cy="240" r="22" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="700" y="244" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="10" font-weight="bold">G</text>
+
+  <!-- === Feature Labels === -->
+
+  <!-- Kademlia DHT -->
+  <rect x="30" y="410" width="200" height="70" rx="6" fill="#16213e" stroke="#53d8fb" stroke-width="1.5"/>
+  <text x="130" y="432" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="12" font-weight="bold">Kademlia DHT</text>
+  <text x="130" y="448" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Distributed hash table</text>
+  <text x="130" y="462" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">for peer discovery</text>
+  <text x="130" y="475" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">+ content routing</text>
+
+  <!-- CRDT State -->
+  <rect x="260" y="410" width="200" height="70" rx="6" fill="#16213e" stroke="#f0c674" stroke-width="1.5"/>
+  <text x="360" y="432" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="12" font-weight="bold">CRDT State</text>
+  <text x="360" y="448" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Eventually consistent</text>
+  <text x="360" y="462" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">via gossip protocol</text>
+  <text x="360" y="475" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">No Raft / No quorum</text>
+
+  <!-- Pub/Sub Topics -->
+  <rect x="490" y="410" width="200" height="70" rx="6" fill="#16213e" stroke="#e94560" stroke-width="1.5"/>
+  <text x="590" y="432" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="12" font-weight="bold">Pub/Sub Topics</text>
+  <text x="590" y="448" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">Topic-based messaging</text>
+  <text x="590" y="462" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">MSG_PUBLISH /</text>
+  <text x="590" y="475" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">MSG_SUBSCRIBE</text>
+
+  <!-- Transport label -->
+  <rect x="30" y="85" width="120" height="28" rx="4" fill="#e94560" fill-opacity="0.1" stroke="#e94560" stroke-width="1"/>
+  <text x="90" y="104" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="10">HTTP/3 (QUIC)</text>
+
+  <!-- SWIM membership label -->
+  <rect x="30" y="120" width="120" height="28" rx="4" fill="#53d8fb" fill-opacity="0.1" stroke="#53d8fb" stroke-width="1"/>
+  <text x="90" y="139" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="10">SWIM + mDNS</text>
+
+  <!-- NAT traversal label -->
+  <rect x="30" y="155" width="120" height="28" rx="4" fill="#f0c674" fill-opacity="0.1" stroke="#f0c674" stroke-width="1"/>
+  <text x="90" y="174" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="10">NAT Punching</text>
+
+  <!-- Footer -->
+  <text x="400" y="495" text-anchor="middle" fill="#555" font-family="monospace" font-size="10">The Autonomous Stack — Macula Mesh Network</text>
+</svg>

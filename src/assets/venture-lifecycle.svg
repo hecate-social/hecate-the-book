@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <defs>
+    <marker id="va" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#53d8fb"/>
+    </marker>
+    <marker id="vb" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f0c674"/>
+    </marker>
+    <marker id="vc" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e94560"/>
+    </marker>
+  </defs>
+
+  <rect width="800" height="500" fill="#1a1a2e"/>
+
+  <!-- Title -->
+  <text x="400" y="28" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="18" font-weight="bold">Venture Lifecycle</text>
+
+  <!-- === VENTURE === -->
+  <rect x="250" y="42" width="300" height="40" rx="6" fill="#e94560" fill-opacity="0.15" stroke="#e94560" stroke-width="2"/>
+  <text x="400" y="67" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="14" font-weight="bold">VENTURE</text>
+
+  <!-- Arrow down to discover -->
+  <line x1="400" y1="82" x2="400" y2="100" stroke="#e94560" stroke-width="2" marker-end="url(#vc)"/>
+
+  <!-- === DISCOVER DIVISIONS === -->
+  <rect x="240" y="105" width="320" height="45" rx="6" fill="#16213e" stroke="#f0c674" stroke-width="2"/>
+  <text x="400" y="127" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="13" font-weight="bold">discover_divisions</text>
+  <text x="400" y="143" text-anchor="middle" fill="#888" font-family="monospace" font-size="9">open / shelve / resume / conclude</text>
+
+  <!-- Arrow to divisions -->
+  <line x1="320" y1="150" x2="180" y2="185" stroke="#f0c674" stroke-width="1.5" marker-end="url(#vb)"/>
+  <line x1="400" y1="150" x2="400" y2="185" stroke="#f0c674" stroke-width="1.5" marker-end="url(#vb)"/>
+  <line x1="480" y1="150" x2="620" y2="185" stroke="#f0c674" stroke-width="1.5" marker-end="url(#vb)"/>
+
+  <!-- PM label -->
+  <text x="230" y="175" fill="#888" font-family="monospace" font-size="8" transform="rotate(-20 230,175)">on_division_identified</text>
+
+  <!-- === DIVISION BOXES === -->
+  <!-- Division 1 -->
+  <rect x="80" y="190" width="190" height="35" rx="4" fill="#16213e" stroke="#53d8fb" stroke-width="1.5"/>
+  <text x="175" y="212" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="11">Division: auth</text>
+
+  <!-- Division 2 -->
+  <rect x="305" y="190" width="190" height="35" rx="4" fill="#16213e" stroke="#53d8fb" stroke-width="2"/>
+  <text x="400" y="212" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="11">Division: orders</text>
+
+  <!-- Division 3 -->
+  <rect x="530" y="190" width="190" height="35" rx="4" fill="#16213e" stroke="#53d8fb" stroke-width="1.5"/>
+  <text x="625" y="212" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="11">Division: billing</text>
+
+  <!-- Focus on Division 2 (orders) - show lifecycle -->
+  <line x1="400" y1="225" x2="400" y2="248" stroke="#53d8fb" stroke-width="2" marker-end="url(#va)"/>
+
+  <!-- === PLANNING PHASE === -->
+  <rect x="120" y="255" width="260" height="130" rx="6" fill="#16213e" stroke="#f0c674" stroke-width="1.5"/>
+  <text x="250" y="275" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="12" font-weight="bold">PLANNING</text>
+
+  <!-- Planning desks -->
+  <rect x="135" y="285" width="110" height="26" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="190" y="302" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">design_aggregate</text>
+
+  <rect x="255" y="285" width="110" height="26" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="310" y="302" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">plan_desk</text>
+
+  <rect x="135" y="318" width="110" height="26" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="190" y="335" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">design_event</text>
+
+  <rect x="255" y="318" width="110" height="26" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="310" y="335" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">plan_projection</text>
+
+  <rect x="135" y="351" width="230" height="26" rx="3" fill="#0f3460" stroke="#f0c674" stroke-width="1"/>
+  <text x="250" y="368" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">design_division / plan_division</text>
+
+  <!-- PM arrow between Planning and Crafting -->
+  <line x1="380" y1="320" x2="418" y2="320" stroke="#e94560" stroke-width="2" marker-end="url(#vc)"/>
+  <text x="399" y="312" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="7">PM</text>
+
+  <!-- === CRAFTING PHASE === -->
+  <rect x="420" y="255" width="260" height="130" rx="6" fill="#16213e" stroke="#53d8fb" stroke-width="1.5"/>
+  <text x="550" y="275" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="12" font-weight="bold">CRAFTING</text>
+
+  <!-- Crafting desks -->
+  <rect x="435" y="285" width="115" height="26" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="492" y="302" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">generate_module</text>
+
+  <rect x="558" y="285" width="108" height="26" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="612" y="302" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">run_test</text>
+
+  <rect x="435" y="318" width="115" height="26" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="492" y="335" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">review_code</text>
+
+  <rect x="558" y="318" width="108" height="26" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="612" y="335" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">deploy_release</text>
+
+  <rect x="435" y="351" width="230" height="26" rx="3" fill="#0f3460" stroke="#53d8fb" stroke-width="1"/>
+  <text x="550" y="368" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">test_division / deploy_division</text>
+
+  <!-- === LIFECYCLE PROTOCOL === -->
+  <rect x="120" y="410" width="560" height="45" rx="6" fill="#0f3460" stroke="#888" stroke-width="1"/>
+  <text x="400" y="428" text-anchor="middle" fill="#888" font-family="monospace" font-size="11">Lifecycle Protocol:</text>
+
+  <!-- State boxes -->
+  <rect x="140" y="435" width="65" height="16" rx="3" fill="#f0c674" fill-opacity="0.2" stroke="#f0c674" stroke-width="1"/>
+  <text x="172" y="447" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">pending</text>
+
+  <text x="218" y="447" fill="#888" font-family="monospace" font-size="10">--></text>
+
+  <rect x="240" y="435" width="60" height="16" rx="3" fill="#53d8fb" fill-opacity="0.2" stroke="#53d8fb" stroke-width="1"/>
+  <text x="270" y="447" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">active</text>
+
+  <text x="313" y="447" fill="#888" font-family="monospace" font-size="10">--></text>
+
+  <rect x="335" y="435" width="60" height="16" rx="3" fill="#e94560" fill-opacity="0.2" stroke="#e94560" stroke-width="1"/>
+  <text x="365" y="447" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="9">paused</text>
+
+  <text x="408" y="447" fill="#888" font-family="monospace" font-size="10">--></text>
+
+  <rect x="425" y="435" width="60" height="16" rx="3" fill="#53d8fb" fill-opacity="0.2" stroke="#53d8fb" stroke-width="1"/>
+  <text x="455" y="447" text-anchor="middle" fill="#53d8fb" font-family="monospace" font-size="9">active</text>
+
+  <text x="498" y="447" fill="#888" font-family="monospace" font-size="10">--></text>
+
+  <rect x="515" y="435" width="80" height="16" rx="3" fill="#f0c674" fill-opacity="0.3" stroke="#f0c674" stroke-width="1.5"/>
+  <text x="555" y="447" text-anchor="middle" fill="#f0c674" font-family="monospace" font-size="9">completed</text>
+
+  <!-- guide_venture on the right -->
+  <rect x="700" y="105" width="85" height="280" rx="6" fill="#e94560" fill-opacity="0.08" stroke="#e94560" stroke-width="1" stroke-dasharray="4"/>
+  <text x="742" y="250" text-anchor="middle" fill="#e94560" font-family="monospace" font-size="10" transform="rotate(90 742,250)">guide_venture (orchestrator)</text>
+
+  <!-- Footer -->
+  <text x="400" y="485" text-anchor="middle" fill="#555" font-family="monospace" font-size="10">The Autonomous Stack — Process-Centric Lifecycle</text>
+</svg>
