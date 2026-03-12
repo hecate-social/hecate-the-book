@@ -42,6 +42,7 @@ CHAPTERS=(
     "${SRC_DIR}/part-5-synthesis/ch17-decentralized-development.md"
     "${SRC_DIR}/part-5-synthesis/ch18-the-autonomous-stack.md"
     "${SRC_DIR}/part-5-synthesis/ch19-what-comes-next.md"
+    "${SRC_DIR}/about-the-author.md"
 )
 
 # Verify all chapters exist
