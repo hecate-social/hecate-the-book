@@ -32,7 +32,7 @@ The insight is simple: your engineering judgment, expressed through thousands of
 
 Once you have that signal stream, the question becomes: what do you point the optimization at? We found five layers where small neural networks, trained through evolutionary optimization, produce compounding returns.
 
-**Model selection.** Most AI coding tools use the same model for everything. That's like hiring a senior architect to write boilerplate getters. A small network can learn which tasks in your workflow need the expensive model and which ones a cheaper, faster model handles just fine. Stop paying for Opus when Haiku would do. Our early experiments show 40-60% cost reduction with no quality loss — because the selector learns your specific task distribution.
+**Model selection.** Most AI coding tools use the same model for everything. That's like hiring a senior architect to write boilerplate getters. A small network can learn which tasks in your workflow need the expensive model and which ones a cheaper, faster model handles just fine. Stop paying for Opus when Haiku would do. We expect significant cost reduction with no quality loss — because the selector learns your specific task distribution, not a generic benchmark.
 
 **Gate prediction.** Current tools either auto-apply everything (dangerous) or interrupt you for approval on everything (exhausting). A network that has watched you approve and reject thousands of suggestions can predict your decision with increasing accuracy. High confidence? Apply automatically. Low confidence? Ask. The interruption rate drops over time as the predictor gets better at modeling your preferences. The human stays in the loop — but only where the human is actually needed.
 
@@ -90,6 +90,6 @@ We're not building a better AI coding tool. We're building one that builds itsel
 
 ---
 
-This is the core thesis behind Martha, an open-source project built on the BEAM (Erlang/OTP). The architecture, the philosophy, and the evolutionary mechanisms are documented in a free book: *Hecate: Building AI That Evolves With You*.
+This is the core thesis behind Martha, an open-source project built on the BEAM (Erlang/OTP). The architecture, the philosophy, and the evolutionary mechanisms are documented in a free book: *The Autonomous Stack: An Exploration into Another Path*.
 
 The book is free. The code is open. The path is different.
