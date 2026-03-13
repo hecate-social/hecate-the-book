@@ -90,6 +90,8 @@ We're not building a better AI coding tool. We're building one that builds itsel
 
 ---
 
-This is the core thesis behind Martha, an open-source project built on the BEAM (Erlang/OTP). The architecture, the philosophy, and the evolutionary mechanisms are documented in a free book: *The Autonomous Stack: An Exploration into Another Path*.
+Martha is one piece of a larger ecosystem called Hecate — an open-source platform built on the BEAM (Erlang/OTP) that explores what happens when you combine event sourcing, a masterless peer-to-peer mesh, neuroevolution, and LLM orchestration into a single stack. The evolving AI tool described here is where those pieces converge, but the ideas underneath — process-centric modeling, vertical architecture, human gates, privacy by design — apply far beyond code generation.
+
+The architecture, the philosophy, and the lessons learned are documented in a free book: *The Autonomous Stack: An Exploration into Another Path*.
 
 The book is free. The code is open. The path is different.
